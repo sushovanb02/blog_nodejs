@@ -1,0 +1,24 @@
+{
+  "name": "blog_nodejs",
+  "version": "1.0.0",
+  "description": "blog project using nodejs",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushovanb02/blog_nodejs.git"
+  },
+  "author": "sushovanb02",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sushovanb02/blog_nodejs/issues"
+  },
+  "homepage": "https://github.com/sushovanb02/blog_nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.0-beta.2"
+  }
+}
