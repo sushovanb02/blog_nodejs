@@ -3,7 +3,7 @@ const Sequelize = require('sequelize')
 const db = new Sequelize({
   database: 'realworlddb',
   username: 'realworlduser',
-  password: 'realworldpass',
+  password: 'Deep@234',
   dialect: 'mysql'
 })
 
@@ -62,3 +62,22 @@ const Users = db.define('user', {
       primaryKey: true
     }
   })
+
+  Comments.belongsTo(Articles)
+  Articles.hasMany(Comments)
+  
+  Comments.belongsTo(Users, { as: 'author' })
+  
+  Articles.belongsTo(Users, { as: 'author' })
+  Users.hasMany(Articles)
+  
+  Articles.belongsToMany(Users, { through: 'favourites' })
+  Users.belongsToMany(Articles, { through: 'favourites' })
+  
+  Articles.belongsToMany(Tags, { through: 'article_tags' })
+  Tags.belongsToMany(Articles, { through: 'article_tags' })
+
+  module.exports = {
+    db,
+    Users, Articles, Comments, Tags
+  }
